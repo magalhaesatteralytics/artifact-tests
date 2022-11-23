@@ -1,0 +1,16 @@
+name: Create Artifact
+
+on:
+  workflow_dispatch:
+
+jobs:
+  create-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Hello World file
+        run: |
+          echo "Hello World!" > hello.txt
+      - uses: actions/upload-artifact@v3
+        with:
+          name: hello
+          path: hello.txt
